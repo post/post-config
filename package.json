@@ -1,6 +1,6 @@
 {
   "name": "post-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A create configuration for posthtml && postcss plugins",
   "license": "MIT",
   "repository": "post-org/post-config",
@@ -46,8 +46,8 @@
     "Namespace"
   ],
   "dependencies": {
-      "app-root-path": "^1.2.1",
-      "path-exists": "^3.0.0"
+    "app-root-path": "^1.2.1",
+    "path-exists": "^3.0.0"
   },
   "devDependencies": {
     "ava": "*",
@@ -131,13 +131,13 @@
     }
   },
   "posthtml": {
-      "bem": {
-        "elemPrefix": "__",
-        "modPrefix": "--",
-        "modDlmtr": "-"
-      },
-      "styleToFile": {
-        "path": "./dist/styleToFile.css"
-      }
+    "bem": {
+      "elemPrefix": "__",
+      "modPrefix": "--",
+      "modDlmtr": "-"
+    },
+    "styleToFile": {
+      "path": "./dist/styleToFile.css"
+    }
   }
 }
