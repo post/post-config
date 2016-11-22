@@ -126,7 +126,7 @@ test('should return with advanced settings from array options and second file op
 		}
 	}];
 
-	t.deepEqual(expected, generator(options, 'fixtures/posthtml.js'));
+	t.deepEqual(expected, generator(options, 'test/fixtures/posthtml.js'));
 });
 
 test('should return with advanced settings from files', t => {
@@ -147,7 +147,7 @@ test('should return with advanced settings from files', t => {
 		},
 		cssModules: {}
 	};
-	const options = 'fixtures/posthtml.json';
+	const options = 'test/fixtures/posthtml.json';
 
 	t.deepEqual(expected, generator(options));
 });
