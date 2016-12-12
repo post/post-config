@@ -1,0 +1,55 @@
+{
+  "name": "post-config-test",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "path-exists": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "autoprefixer": "6.5.3",
+    "ava-codemods": "^0.3.0",
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-preset-babili": "0.0.9",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.16.0",
+    "clinton": "^0.8.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "conventional-changelog-lint": "^1.0.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.8.0",
+    "eslint-config-xo": "^0.17.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-ava": "^4.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.2",
+    "eslint-plugin-require-path-exists": "^1.1.5",
+    "eslint-plugin-xo": "^1.0.0",
+    "husky": "^0.11.9",
+    "np": "^2.8.0",
+    "nyc": "^10.0.0",
+    "updtr": "^0.2.1",
+    "postcss-cli": "^2.5.2",
+    "posthtml": "^0.9.0",
+    "posthtml-bem": "^0.2.2",
+    "posthtml-css-modules": "^0.1.0",
+    "posthtml-each": "^1.0.1",
+    "posthtml-include": "^1.1.0",
+    "posthtml-modules": "^0.4.0",
+    "posthtml-standard-config": "0.0.5",
+    "posthtml-style-to-file": "^0.1.1",
+    "xo": "*"
+  },
+  "posthtml": {
+    "bem": {
+      "elemPrefix": "__",
+      "modPrefix": "--",
+      "modDlmtr": "-"
+    },
+    "styleToFile": {
+      "path": "./dist/styleToFile.css"
+    }
+  }
+}

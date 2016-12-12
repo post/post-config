@@ -1,5 +1,8 @@
+import path from 'path';
 import test from 'ava';
 import generator from '../src/index.js';
+
+process.chdir(path.resolve(process.cwd() + '/test'));
 
 test('should retrun object', t => {
 	t.true(typeof generator() === 'object');
@@ -126,7 +129,7 @@ test('should return with advanced settings from array options and second file op
 		}
 	}];
 
-	t.deepEqual(expected, generator(options, 'test/fixtures/posthtml.js'));
+	t.deepEqual(expected, generator(options, 'fixtures/posthtml.js'));
 });
 
 test('should return with advanced settings from files', t => {
@@ -147,7 +150,7 @@ test('should return with advanced settings from files', t => {
 		},
 		cssModules: {}
 	};
-	const options = 'test/fixtures/posthtml.json';
+	const options = 'fixtures/posthtml.json';
 
 	t.deepEqual(expected, generator(options));
 });
