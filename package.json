@@ -28,7 +28,8 @@
     "lintmd": "eslint --ext md --rule indent: [error, 4] .",
     "pretest": "clinton && npm run lintjs && npm run lintmd",
     "test": "nyc ava",
-    "update": "updtr"
+    "update": "updtr",
+    "testen": "testen -n -- ava"
   },
   "files": [
     "lib/"
@@ -71,6 +72,7 @@
     "husky": "^0.11.9",
     "np": "^2.8.0",
     "nyc": "^10.0.0",
+    "testen": "^1.8.2",
     "updtr": "^0.2.1",
     "xo": "*"
   },
@@ -120,5 +122,13 @@
         "off"
       ]
     }
+  },
+  "testen": {
+    "node": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ]
   }
 }
