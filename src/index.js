@@ -1,39 +1,59 @@
-import path from 'path';
-import {existsSync} from 'fs';
-import blackList from './black-list';
+import blackList from './black-list.js';
+import whiteList from './white-list.js';
 
-const exclude = plugins => /^posthtml-[\w]/.test(plugins);
-const inBlackList = plugin => !blackList.includes(plugin);
-const toSnakeCase = plugin => plugin.slice(9).replace(/[_.-](\w|$)/g, (match, parameter) => parameter.toUpperCase());
-const isFile = string => typeof string === 'string' && existsSync(path.join(process.cwd(), string));
+export default () => {
+	const modules = require('./modules.js');
 
-export default (...options) => {
-	const {dependencies, devDependencies, posthtml} = require(path.join(process.cwd(), 'package.json'));
-
-	return Object.assign(
-		{},
-		Object.keys(Object.assign({}, dependencies, devDependencies))
-			.filter(exclude)
-			.filter(inBlackList)
-			.map(toSnakeCase)
-			.reduce((previousValue, currentValue) => Object.assign(previousValue, {[currentValue]: {}}), {}),
-		posthtml,
-		options.reduce((previousValue, currentValue) => {
-			if (isFile(currentValue)) {
-				currentValue = require(path.resolve(currentValue));
+	return modules.namespaces.reduce((config, namespace) => {
+		if (Object.prototype.hasOwnProperty.call(modules.pkg, namespace)) {
+			if (Object.prototype.hasOwnProperty.call(config, config[namespace]) === false) {
+				config[namespace] = {};
 			}
 
-			if (Array.isArray(currentValue)) {
-				currentValue = currentValue.reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue), {});
+			if (Object.prototype.hasOwnProperty.call(config[namespace], 'plugins') === false) {
+				config[namespace].plugins = {};
 			}
 
-			if (Array.isArray(currentValue) === false && isFile(currentValue) === false && currentValue !== undefined) {
-				currentValue = Object.keys(currentValue)
-					.map(plugin => (exclude(plugin) ? {[toSnakeCase(plugin)]: currentValue[plugin]} : {[plugin]: currentValue[plugin]}))
-					.reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue), {});
-			}
+			Object.keys(modules.pkg[namespace]).forEach(property => {
+				const module = modules.find(namespace, property);
 
-			return Object.assign(previousValue, currentValue);
-		}, {})
-	);
+				if (module) {
+					config[namespace].plugins[module] = modules.pkg[namespace][property];
+				}
+
+				if (module === undefined && modules.list.includes(property)) {
+					config[namespace].plugins[property] = modules.pkg[namespace][property];
+				}
+
+				if (module === undefined && !modules.list.includes(property)) {
+					config[namespace][property] = modules.pkg[namespace][property];
+				}
+			});
+
+			modules.list
+				.filter(property => (property.substr(0, namespace.length) === namespace ||
+						(Object.prototype.hasOwnProperty.call(whiteList, namespace) && whiteList[namespace].includes(property))) &&
+						property !== namespace
+				)
+				.forEach(property => {
+					if (blackList.includes(property)) {
+						return;
+					}
+
+					if (Array.isArray(config[namespace].plugins)) {
+						config[namespace].plugins.push(property);
+					}
+
+					if (
+						Array.isArray(config[namespace].plugins) === false &&
+						typeof config[namespace].plugins === 'object' &&
+						Object.prototype.hasOwnProperty.call(config[namespace].plugins, property) === false
+					) {
+						config[namespace].plugins[property] = {};
+					}
+				});
+		}
+
+		return config;
+	}, {});
 };

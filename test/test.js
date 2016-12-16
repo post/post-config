@@ -1,15 +1,85 @@
 import path from 'path';
 import test from 'ava';
-import generator from '../src/index.js';
+import postConfig from '../src/index.js';
 
 process.chdir(path.resolve(process.cwd() + '/test'));
 
 test('should retrun object', t => {
-	t.true(typeof generator() === 'object');
-	t.false(Array.isArray(generator()));
+	t.true(typeof postConfig() === 'object');
+	t.false(Array.isArray(postConfig()));
 });
 
-test('should return object witch five params from package.json', t => {
+test('should return default config from package', t => {
+	const {postcss, posthtml} = postConfig();
+	const expected = {
+		postcss: {
+			from: 'test',
+			to: './',
+			plugins: {
+				'postcss-modules': {
+					generateScopedName: '[name]__[local]___[hash:base64:5]'
+				},
+				autoprefixer: {
+					browsers: ['last 2 versions']
+				},
+				'postcss-at-rules-variables': {},
+				'postcss-attribute-selector-prefix': {},
+				'postcss-banner': {},
+				'postcss-browser-reporter': {},
+				'postcss-calc': {},
+				'postcss-class-prefix': {},
+				'postcss-clearfix': {},
+				'postcss-conditionals': {},
+				'postcss-csso': {},
+				'postcss-custom-properties': {},
+				'postcss-devtools': {},
+				'postcss-each': {},
+				'postcss-easy-import': {},
+				'postcss-extend': {},
+				'postcss-for': {},
+				'postcss-initial': {},
+				'postcss-mixins': {},
+				'postcss-nested': {},
+				'postcss-sorting': {},
+				cssnano: {},
+				perfectionist: {},
+				'postcss-discard-comments': {}
+			}
+		},
+		posthtml: {
+			sync: true,
+			plugins: {
+				'posthtml-bem': {
+					elemPrefix: '__',
+					modPrefix: '--',
+					modDlmtr: '-'
+				},
+				'posthtml-style-to-file': {
+					path: './dist/styleToFile.css'
+				},
+				'posthtml-modules': {
+					root: './src/'
+				},
+				'posthtml-inline-assets': {
+					from: 'dev/index.html'
+				},
+				'posthtml-remove-tags': {
+					tags: 'style'
+				},
+				'posthtml-css-modules': {},
+				'posthtml-each': {},
+				'posthtml-include': {},
+				'posthtml-beautify': {},
+				'posthtml-inline-css': {},
+				'posthtml-remove-attributes': 'class'
+			}
+		}
+	};
+
+	t.deepEqual(expected, {posthtml: posthtml, postcss: postcss});
+});
+
+/* test('should return object witch five params from package.json', t => {
 	const expected = {
 		bem: {
 			elemPrefix: '__',
@@ -25,7 +95,7 @@ test('should return object witch five params from package.json', t => {
 		}
 	};
 
-	t.deepEqual(expected, generator());
+	t.deepEqual(expected, postConfig());
 });
 
 test('should return object witch three params from package.json and not down', t => {
@@ -44,7 +114,7 @@ test('should return object witch three params from package.json and not down', t
 		cssModules: {}
 	};
 
-	t.deepEqual(expected, generator(undefined));
+	t.deepEqual(expected, postConfig(undefined));
 });
 
 test('should return with advanced settings from options', t => {
@@ -68,7 +138,7 @@ test('should return with advanced settings from options', t => {
 		}
 	};
 
-	t.deepEqual(expected, generator(options));
+	t.deepEqual(expected, postConfig(options));
 });
 
 test('should return with advanced settings from array options', t => {
@@ -98,7 +168,7 @@ test('should return with advanced settings from array options', t => {
 		}
 	}];
 
-	t.deepEqual(expected, generator(options));
+	t.deepEqual(expected, postConfig(options));
 });
 
 test('should return with advanced settings from array options and second file options', t => {
@@ -129,7 +199,7 @@ test('should return with advanced settings from array options and second file op
 		}
 	}];
 
-	t.deepEqual(expected, generator(options, 'fixtures/posthtml.js'));
+	t.deepEqual(expected, postConfig(options, 'fixtures/posthtml.js'));
 });
 
 test('should return with advanced settings from files', t => {
@@ -152,7 +222,7 @@ test('should return with advanced settings from files', t => {
 	};
 	const options = 'fixtures/posthtml.json';
 
-	t.deepEqual(expected, generator(options));
+	t.deepEqual(expected, postConfig(options));
 });
 
 test('should return with advanced settings from options where options is a string', t => {
@@ -177,5 +247,5 @@ test('should return with advanced settings from options where options is a strin
 		cssModules: 'dist/css-modules.json'
 	};
 
-	t.deepEqual(expected, generator(options));
-});
+	t.deepEqual(expected, postConfig(options));
+}); */
