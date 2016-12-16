@@ -1,0 +1,197 @@
+{
+  "name": "post-config-test",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "path-exists": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-register": "^6.18.0",
+    "doiuse": "^2.5.0",
+    "execa": "^0.5.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-cli": "^1.2.2",
+    "gulp-css-validator": "0.0.4",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "postcss-at-rules-variables": "0.0.26",
+    "postcss-attribute-selector-prefix": "0.0.11",
+    "postcss-banner": "^3.0.0",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-calc": "^5.3.1",
+    "postcss-class-prefix": "^0.3.0",
+    "postcss-clearfix": "^1.0.0",
+    "postcss-cli": "^2.6.0",
+    "postcss-conditionals": "^2.0.2",
+    "postcss-csso": "^1.1.2",
+    "postcss-custom-properties": "^5.0.1",
+    "postcss-devtools": "^1.1.1",
+    "postcss-each": "^0.9.3",
+    "postcss-easy-import": "^1.0.1",
+    "postcss-extend": "^1.0.5",
+    "postcss-for": "^2.1.1",
+    "postcss-initial": "^1.5.3",
+    "postcss-mixins": "^5.4.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-sorting": "^1.7.0",
+    "stylelint": "^7.6.0",
+    "stylelint-config-standard": "^15.0.0",
+    "updtr": "^0.2.3",
+    "ava": "*",
+    "ava-codemods": "^0.3.0",
+    "autoprefixer": "6.5.4",
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-babili": "0.0.9",
+    "babel-preset-env": "^1.0.2",
+    "babel-register": "^6.16.0",
+    "clinton": "^0.8.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "conventional-changelog-lint": "^1.0.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.11.1",
+    "eslint-config-xo": "^0.17.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-ava": "^4.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.2",
+    "eslint-plugin-require-path-exists": "^1.1.5",
+    "eslint-plugin-xo": "^1.0.0",
+    "husky": "^0.11.9",
+    "nyc": "^10.0.0",
+    "testen": "^1.8.2",
+    "np": "^2.11.0",
+    "cssnano": "3.9.1",
+    "updtr": "^0.2.1",
+    "postcss-cli": "^2.5.2",
+    "posthtml": "^0.9.0",
+    "posthtml-bem": "^0.2.2",
+    "posthtml-css-modules": "^0.1.0",
+    "posthtml-each": "^1.0.1",
+    "posthtml-include": "^1.1.0",
+    "postcss-modules": "0.5.2",
+    "posthtml-modules": "^0.4.0",
+    "posthtml-standard-config": "0.0.5",
+    "posthtml-style-to-file": "^0.1.1",
+    "xo": "*",
+    "perfectionist": "^2.3.1",
+    "postcss-at-rules-variables": "0.0.26",
+    "postcss-calc": "^5.2.1",
+    "postcss-cli": "^2.5.2",
+    "postcss-conditionals": "^2.0.3",
+    "postcss-csso": "^1.1.2",
+    "postcss-custom-properties": "^5.0.1",
+    "postcss-devtools": "^1.1.1",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-each": "^0.9.3",
+    "postcss-easy-import": "^1.0.1",
+    "postcss-for": "^2.1.1",
+    "postcss-nested": "^1.0.0",
+    "posthtml-beautify": "0.1.0",
+    "posthtml-cli": "^0.2.10",
+    "posthtml-inline-assets": "^2.0.0",
+    "posthtml-inline-css": "^1.2.2",
+    "posthtml-modules": "^0.4.0",
+    "posthtml-remove-attributes": "^1.0.0",
+    "posthtml-remove-tags": "0.0.1"
+  },
+  "posthtml": {
+    "sync": true,
+    "bem": {
+      "elemPrefix": "__",
+      "modPrefix": "--",
+      "modDlmtr": "-"
+    },
+    "styleToFile": {
+      "path": "./dist/styleToFile.css"
+    },
+    "modules": {
+      "root": "./src/"
+    },
+    "inlineAssets": {
+      "from": "dev/index.html"
+    },
+    "removeTags": {
+      "tags": "style"
+    },
+    "removeAttributes": "class"
+  },
+  "postcss": {
+    "from": "test",
+    "to": "./",
+    "modules": {
+      "generateScopedName": "[name]__[local]___[hash:base64:5]"
+    },
+    "autoprefixer": {
+      "browsers": ["last 2 versions"]
+    }
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "4"
+          }
+        }
+      ],
+      "babili"
+    ],
+    "plugins": [
+      "array-includes",
+      "add-module-exports"
+    ]
+  },
+  "stylelint": {
+      "extends": "stylelint-config-standard"
+  },
+  "eslintConfig": {
+    "format": "node_modules/eslint-formatter-pretty",
+    "parser": "babel-eslint",
+    "plugins": [
+      "ava",
+      "xo",
+      "babel",
+      "require-path-exists",
+      "markdown"
+    ],
+    "extends": [
+      "xo",
+      "plugin:xo/recommended",
+      "plugin:ava/recommended"
+    ]
+  },
+  "clinton": {
+    "ignores": [
+      "test/**",
+      "tmp/**",
+      "lib/**",
+      "*.{html,jpg}"
+    ],
+    "rules": {
+      "pkg-main": [
+        "off"
+      ],
+      "xo": [
+        "off"
+      ]
+    }
+  },
+  "testen": {
+    "node": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ]
+  }
+}
