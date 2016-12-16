@@ -18,6 +18,9 @@
   "scripts": {
     "commitmsg": "conventional-changelog-lint -e",
     "postpublish": "conventional-changelog -i changelog.md -s -r 0 && git commit -am \"chore(changelog): Update changelog\"",
+    "rc": "np prerelease --tag=rc",
+    "beta": "np prerelease --tag=beta",
+    "alpha": "np prerelease --tag=alpha",
     "patch": "np patch --any-branch",
     "minor": "np minor --any-branch",
     "major": "np major --any-branch",
