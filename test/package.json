@@ -127,6 +127,11 @@
     },
     "autoprefixer": {
       "browsers": ["last 2 versions"]
+    },
+    "plugins": {
+      "at-rules-variables": {
+        "atRule": ["@media"]
+      }
     }
   },
   "ava": {
