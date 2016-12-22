@@ -1,0 +1,15 @@
+{
+  "postcss": {
+    "from": "src/",
+    "plugins": {
+      "postcss-calc": {
+          "precision": 2
+      }
+    }
+  },
+  "plugins": {
+    "atRulesVariables": {
+        "atRule": ["@test"]
+    }
+  }
+}
