@@ -15,7 +15,7 @@ export default (...configExtends) => {
 				config[namespace].plugins = {};
 			}
 
-			Object.keys(Object.assign({}, modules.pkg[namespace], modules.pkg[namespace].plugins || {}))
+			Object.keys(deepmerge(modules.pkg[namespace], modules.pkg[namespace].plugins || {}))
 				.filter(property => property !== 'plugins')
 				.forEach(property => {
 					const module = modules.find(namespace, property);
@@ -32,7 +32,20 @@ export default (...configExtends) => {
 						config[namespace].plugins[module] = modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {};
 					}
 
-					if (module === undefined && modules.list.includes(property)) {
+					if (
+						module === undefined &&
+						modules.namespaces.includes(namespace) &&
+						modules.list.includes(property) &&
+						whiteList[namespace].includes(property)
+					) {
+						config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					}
+
+					if (
+						module === undefined &&
+						modules.list.includes(property) &&
+						whiteList[namespace].includes(property) === false
+					) {
 						config[namespace].plugins[property] = modules.pkg[namespace][property] || {};
 					}
 

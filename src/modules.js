@@ -1,6 +1,7 @@
 import path from 'path';
 import {readdirSync, existsSync} from 'fs';
 import * as convert from './to-case.js';
+import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
 
 export default new class {
@@ -23,6 +24,12 @@ export default new class {
 	}
 
 	getNamespace(module) {
+		for (let namespace in whiteList) {
+			if (whiteList[namespace].includes(module)) {
+				return namespace;
+			}
+		}
+
 		if (module.indexOf('-') === -1) {
 			return module;
 		}
@@ -54,6 +61,16 @@ export default new class {
 			Object.keys(config).forEach(property => {
 				let namespace = this.namespaces.includes(this.getNamespace(property)) ? this.getNamespace(property) : undefined;
 				const module = this.find(namespace, property);
+
+				if (
+					module === undefined &&
+					this.namespaces.includes(namespace) &&
+					this.list.includes(property) &&
+					whiteList[namespace].includes(property)
+				) {
+					this.pkg[namespace] = deepmerge(this.pkg[namespace], {[property]: config[property] || {}});
+					delete config[property];
+				}
 
 				if (
 					this.list.includes(module) &&

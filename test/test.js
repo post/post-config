@@ -19,9 +19,7 @@ test('should return default config postcss from package', t => {
 				'postcss-modules': {
 					generateScopedName: '[name]__[local]___[hash:base64:5]'
 				},
-				autoprefixer: {
-					browsers: ['last 2 versions']
-				},
+				autoprefixer: {},
 				'postcss-at-rules-variables': {
 					atRule: ['@media']
 				},
@@ -178,6 +176,9 @@ test('should return default config postcss with extends config', t => {
 		postcss: {
 			from: 'src/',
 			plugins: {
+				autoprefixer: {
+					browsers: ['last 2 versions']
+				},
 				'postcss-calc': {
 					precision: 2
 				}
