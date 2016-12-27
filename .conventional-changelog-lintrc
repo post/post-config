@@ -1,0 +1,6 @@
+{
+  "extends": ["angular"],
+  "wildcards": {
+    "prerelease": ["^(\\d*.\\d*.\\d*)(?:-)(?:(\\d.{0,3})|alpha|beta|rc)(.\\d*)?$"]
+  }
+}
