@@ -1,3 +1,14 @@
+<a name="0.0.4-alpha.2"></a>
+## 0.0.4-alpha.2 (2016-12-27)
+
+* 0.0.4-alpha.2 ([5eea1e6](https://github.com/post-org/post-config/commit/5eea1e6))
+* chore(changelog-lintrc): add temporary config for prerelease ([9c4ce58](https://github.com/post-org/post-config/commit/9c4ce58))
+* chore(changelog): Update changelog ([90c2cdb](https://github.com/post-org/post-config/commit/90c2cdb))
+* chore(package): revert postpublish script ([0ff3b1e](https://github.com/post-org/post-config/commit/0ff3b1e))
+* fix(*): incorrect merge module from extend, fix #34 ([227c1ef](https://github.com/post-org/post-config/commit/227c1ef)), closes [#34](https://github.com/post-org/post-config/issues/34)
+
+
+
 <a name="0.0.4-alpha.1"></a>
 ## 0.0.4-alpha.1 (2016-12-22)
 
@@ -10,14 +21,15 @@
 * chore(package): add prerelease tag ([d7eef29](https://github.com/post-org/post-config/commit/d7eef29))
 * chore(package): add version pkg in commit changelog ([c5e4c4f](https://github.com/post-org/post-config/commit/c5e4c4f))
 * chore(package): change preset-es2015 to preset-env ([69409c0](https://github.com/post-org/post-config/commit/69409c0))
-* chore(package): fix postpublish script ([bb8864e](https://github.com/post-org/post-config/commit/bb8864e))
 * chore(package): fix postpublish script ([d168faf](https://github.com/post-org/post-config/commit/d168faf))
+* chore(package): fix postpublish script ([bb8864e](https://github.com/post-org/post-config/commit/bb8864e))
 * chore(package): update babel-preset-babili to version 0.0.9 ([ae16a23](https://github.com/post-org/post-config/commit/ae16a23))
 * chore(package): update devDep ([36984c6](https://github.com/post-org/post-config/commit/36984c6))
 * chore(package): update eslint to version 3.11.1 ([fd0cf10](https://github.com/post-org/post-config/commit/fd0cf10))
 * chore(package): update np to version 2.11.0 ([25dbb02](https://github.com/post-org/post-config/commit/25dbb02))
 * chore(package): update nyc to version 10.0.0 ([49d3a0b](https://github.com/post-org/post-config/commit/49d3a0b))
 * chore(package): update prerelease script ([852ccd1](https://github.com/post-org/post-config/commit/852ccd1))
+* chore(package): update xo to version 0.17.1 ([c1a379c](https://github.com/post-org/post-config/commit/c1a379c))
 * style(modules): fix padded-blocks ([1979d7f](https://github.com/post-org/post-config/commit/1979d7f))
 * test(*): add testen, fixed #18 ([53cdfbf](https://github.com/post-org/post-config/commit/53cdfbf)), closes [#18](https://github.com/post-org/post-config/issues/18)
 * test(*): for plugins and arguments ([377f5d5](https://github.com/post-org/post-config/commit/377f5d5))
