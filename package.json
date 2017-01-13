@@ -1,6 +1,6 @@
 {
   "name": "post-config",
-  "version": "0.0.4-alpha.3",
+  "version": "0.0.4-alpha.2",
   "description": "A create configuration for posthtml && postcss plugins",
   "license": "MIT",
   "repository": "post-org/post-config",
@@ -50,8 +50,7 @@
     "Namespace"
   ],
   "dependencies": {
-    "deepmerge": "^1.3.1",
-    "to-camel-case": "^1.0.0"
+    "deepmerge": "^1.3.1"
   },
   "devDependencies": {
     "ava": "*",
@@ -61,16 +60,16 @@
     "babel-plugin-add-module-exports": "^0.2.0",
     "babel-plugin-array-includes": "^2.0.3",
     "babel-preset-babili": "0.0.9",
-    "babel-preset-env": "^1.1.8",
+    "babel-preset-env": "^1.1.4",
     "babel-register": "^6.16.0",
     "clinton": "^0.10.0",
     "conventional-changelog-cli": "^1.2.0",
     "conventional-changelog-lint": "^1.0.0",
     "coveralls": "^2.11.14",
-    "eslint": "^3.13.1",
+    "eslint": "^3.12.2",
     "eslint-config-xo": "^0.17.0",
     "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-ava": "^4.0.1",
+    "eslint-plugin-ava": "^4.0.0",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-markdown": "^1.0.0-beta.2",
     "eslint-plugin-require-path-exists": "^1.1.5",
@@ -79,7 +78,8 @@
     "np": "^2.11.0",
     "nyc": "^10.0.0",
     "testen": "^1.8.2",
-    "updtr": "^0.2.1"
+    "updtr": "^0.2.1",
+    "xo": "0.17.1"
   },
   "ava": {
     "require": [
@@ -92,7 +92,7 @@
         "env",
         {
           "targets": {
-            "node": 4
+            "node": "4"
           }
         }
       ],

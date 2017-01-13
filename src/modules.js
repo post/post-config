@@ -1,6 +1,6 @@
 import path from 'path';
 import {readdirSync, existsSync} from 'fs';
-import toCamelCase from 'to-camel-case';
+import * as convert from './to-case.js';
 import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
 
@@ -19,7 +19,7 @@ export default new class {
 				return false;
 			}
 
-			return toCamelCase(module).toLowerCase().indexOf(toCamelCase(`${property.indexOf(namespace) === -1 ? namespace : ''}${property}`).toLowerCase()) !== -1;
+			return convert.toCamelCase(module).toLowerCase().indexOf(convert.toCamelCase(`${property.indexOf(namespace) === -1 ? namespace : ''}${property}`).toLowerCase()) !== -1;
 		});
 	}
 
@@ -38,7 +38,7 @@ export default new class {
 	}
 
 	configExtends(configs) {
-		configs.forEach((config = {}) => {
+		configs.forEach(config => {
 			if (Array.isArray(config)) {
 				throw new TypeError('config extends must not be an Array');
 			}
