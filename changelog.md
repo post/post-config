@@ -1,3 +1,19 @@
+<a name="0.0.4-alpha.3"></a>
+## 0.0.4-alpha.3 (2017-01-13)
+
+* 0.0.4-alpha.3 ([14f03b5](https://github.com/post-org/post-config/commit/14f03b5))
+* perf(black-list): expand list, close #37 ([4b739fe](https://github.com/post-org/post-config/commit/4b739fe)), closes [#37](https://github.com/post-org/post-config/issues/37)
+* perf(white-list): expand list, close #41 ([6fa5a94](https://github.com/post-org/post-config/commit/6fa5a94)), closes [#41](https://github.com/post-org/post-config/issues/41)
+* chore(changelog): Update changelog v0.0.4-alpha.2 ([1220589](https://github.com/post-org/post-config/commit/1220589))
+* chore(package): fix 'Target version must be a number' ([84a1405](https://github.com/post-org/post-config/commit/84a1405))
+* chore(package): remove xo, close #46 ([511d9f0](https://github.com/post-org/post-config/commit/511d9f0)), closes [#46](https://github.com/post-org/post-config/issues/46)
+* chore(package): update babel-preset-env to version 1.1.8 ([75c6196](https://github.com/post-org/post-config/commit/75c6196))
+* chore(package): update clinton to version 0.10.0 ([39035a2](https://github.com/post-org/post-config/commit/39035a2))
+* chore(package): update eslint to version 3.13.1 ([2a7cd86](https://github.com/post-org/post-config/commit/2a7cd86))
+* chore(package): update eslint-plugin-ava to version 4.0.1 ([60983ae](https://github.com/post-org/post-config/commit/60983ae))
+
+
+
 <a name="0.0.4-alpha.2"></a>
 ## 0.0.4-alpha.2 (2016-12-27)
 
