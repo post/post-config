@@ -9,14 +9,6 @@ test('should retrun object', t => {
 	t.false(Array.isArray(postConfig()));
 });
 
-test('should retrun Error: config extends must not be an Array', t => {
-	const error = t.throws(() => {
-		postConfig([[]]);
-	}, TypeError);
-
-	t.is(error.message, 'config extends must not be an Array');
-});
-
 test('should return default config postcss from package', t => {
 	const {postcss} = postConfig();
 	const expected = {
