@@ -38,7 +38,7 @@ export default new class {
 	}
 
 	configExtends(configs) {
-		configs.forEach(config => {
+		configs.forEach((config = {}) => {
 			if (Array.isArray(config)) {
 				throw new TypeError('config extends must not be an Array');
 			}
