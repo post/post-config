@@ -1,6 +1,6 @@
 {
   "name": "post-config",
-  "version": "0.0.4-alpha.3",
+  "version": "0.0.4-alpha.4",
   "description": "A create configuration for posthtml && postcss plugins",
   "license": "MIT",
   "repository": "post-org/post-config",
