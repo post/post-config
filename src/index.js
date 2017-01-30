@@ -6,12 +6,12 @@ export default (...configExtends) => {
 	const modules = require('./modules.js');
 
 	return modules.configExtends(configExtends).namespaces.reduce((config, namespace) => {
-		if (Object.prototype.hasOwnProperty.call(modules.pkg, namespace)) {
-			if (Object.prototype.hasOwnProperty.call(config, config[namespace]) === false) {
+		if (Reflect.has(modules.pkg, namespace)) {
+			if (Reflect.has(config, config[namespace]) === false) {
 				config[namespace] = {};
 			}
 
-			if (Object.prototype.hasOwnProperty.call(config[namespace], 'plugins') === false) {
+			if (Reflect.has(config[namespace], 'plugins') === false) {
 				config[namespace].plugins = {};
 			}
 
@@ -22,13 +22,13 @@ export default (...configExtends) => {
 
 					if (
 						module &&
-						Object.prototype.hasOwnProperty.call(config[namespace], 'plugins') &&
-						Object.prototype.hasOwnProperty.call(config[namespace].plugins, module)
+						Reflect.has(config[namespace], 'plugins') &&
+						Reflect.has(config[namespace].plugins, module)
 					) {
 						config[namespace].plugins[module] = deepmerge(config[namespace].plugins[module], (modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}));
 					}
 
-					if (module && Object.prototype.hasOwnProperty.call(config[namespace].plugins, module) === false) {
+					if (module && Reflect.has(config[namespace].plugins, module) === false) {
 						config[namespace].plugins[module] = modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {};
 					}
 
@@ -56,7 +56,7 @@ export default (...configExtends) => {
 
 			modules.list
 				.filter(property => (property.substr(0, namespace.length) === namespace ||
-						(Object.prototype.hasOwnProperty.call(whiteList, namespace) && whiteList[namespace].includes(property))) &&
+						(Reflect.has(whiteList, namespace) && whiteList[namespace].includes(property))) &&
 						property !== namespace
 				)
 				.forEach(property => {
@@ -71,7 +71,7 @@ export default (...configExtends) => {
 					if (
 						Array.isArray(config[namespace].plugins) === false &&
 						typeof config[namespace].plugins === 'object' &&
-						Object.prototype.hasOwnProperty.call(config[namespace].plugins, property) === false
+						Reflect.has(config[namespace].plugins, property) === false
 					) {
 						config[namespace].plugins[property] = {};
 					}

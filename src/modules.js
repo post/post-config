@@ -47,15 +47,15 @@ export default new class {
 				config = require(path.resolve(this.cwd, config));
 			}
 
-			this.namespaces.filter(namespace => Object.prototype.hasOwnProperty.call(config, namespace))
+			this.namespaces.filter(namespace => Reflect.has(config, namespace))
 				.forEach(namespace => {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], config[namespace]);
-					delete config[namespace];
+					Reflect.deleteProperty(config, namespace);
 				});
 
-			if (Object.prototype.hasOwnProperty.call(config, 'plugins')) {
+			if (Reflect.has(config, 'plugins')) {
 				config = deepmerge(config, config.plugins);
-				delete config.plugins;
+				Reflect.deleteProperty(config, 'plugins');
 			}
 
 			Object.keys(config).forEach(property => {
@@ -69,7 +69,7 @@ export default new class {
 					whiteList[namespace].includes(property)
 				) {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], {[property]: config[property] || {}});
-					delete config[property];
+					Reflect.deleteProperty(config, property);
 				}
 
 				if (
@@ -77,7 +77,7 @@ export default new class {
 					this.namespaces.includes(namespace = this.getNamespace(module))
 				) {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], {[property]: config[property] || {}});
-					delete config[property];
+					Reflect.deleteProperty(config, property);
 				}
 			});
 		});
