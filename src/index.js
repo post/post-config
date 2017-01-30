@@ -7,7 +7,7 @@ export default (...configExtends) => {
 
 	return modules.configExtends(configExtends).namespaces.reduce((config, namespace) => {
 		if (Reflect.has(modules.pkg, namespace)) {
-			if (Reflect.has(config, config[namespace]) === false) {
+			if (Reflect.has(config, namespace) === false) {
 				config[namespace] = {};
 			}
 
