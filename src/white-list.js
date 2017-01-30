@@ -4,6 +4,9 @@ export default {
 		'stylehacks',
 		'cssnano',
 		'perfectionist'
+	],
+	posthtml: [
+		'htmlnano'
 	]
 };
 
