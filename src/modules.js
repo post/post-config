@@ -8,7 +8,8 @@ export default new class {
 	constructor() {
 		this.cwd = process.cwd();
 		this.pkg = require(path.join(this.cwd, 'package.json'));
-		this.list = [...new Set([...readdirSync(path.join(this.cwd, 'node_modules')), ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
+		this.nodeModules = existsSync(path.join(this.cwd, 'node_modules')) ? readdirSync(path.join(this.cwd, 'node_modules')) : {};
+		this.list = [...new Set([...this.nodeModules, ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
