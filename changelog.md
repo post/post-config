@@ -1,3 +1,28 @@
+<a name="0.0.4-alpha.5"></a>
+## 0.0.4-alpha.5 (2017-01-31)
+
+* 0.0.4-alpha.5 ([931b1b9](https://github.com/post-org/post-config/commit/931b1b9))
+* chore(*): add babel-polyfill ([e1d04f7](https://github.com/post-org/post-config/commit/e1d04f7))
+* chore(changelog): Update changelog v0.0.4-alpha.3 ([a8053ae](https://github.com/post-org/post-config/commit/a8053ae))
+* chore(package): update babel-cli to version 6.22.1 ([331ca8a](https://github.com/post-org/post-config/commit/331ca8a))
+* chore(package): update babel-preset-babili to version 0.0.10 ([a2ff62d](https://github.com/post-org/post-config/commit/a2ff62d))
+* chore(package): update clinton to version 0.11.0 ([5dc53e2](https://github.com/post-org/post-config/commit/5dc53e2))
+* chore(package): update eslint to version 3.14.1 ([e45dc46](https://github.com/post-org/post-config/commit/e45dc46))
+* chore(package): update husky to version 0.13.1 ([74716f7](https://github.com/post-org/post-config/commit/74716f7))
+* chore(package): update nyc to version 10.1.0 ([d2d9166](https://github.com/post-org/post-config/commit/d2d9166))
+* test(*): add test with htmlnano ([def021e](https://github.com/post-org/post-config/commit/def021e))
+* test(test): fix uncovered ([d778744](https://github.com/post-org/post-config/commit/d778744))
+* refactor(index): fix Error without posthtml property, close #62 ([4438ea0](https://github.com/post-org/post-config/commit/4438ea0)), closes [#62](https://github.com/post-org/post-config/issues/62)
+* fix(index): fix use Reflect ([3ce72de](https://github.com/post-org/post-config/commit/3ce72de))
+* fix(modules): Cannot convert undefined or null to object, close #50 ([c0c3e39](https://github.com/post-org/post-config/commit/c0c3e39)), closes [#50](https://github.com/post-org/post-config/issues/50)
+* fix(modules): no such file or directory node_modules ([2dbecaf](https://github.com/post-org/post-config/commit/2dbecaf))
+* fix(package): fix incorrect version, close #66 ([54e0f46](https://github.com/post-org/post-config/commit/54e0f46)), closes [#66](https://github.com/post-org/post-config/issues/66)
+* perf(*): use micro plugin to-case, close #40 ([b37b4a1](https://github.com/post-org/post-config/commit/b37b4a1)), closes [#40](https://github.com/post-org/post-config/issues/40)
+* perf(*): use reflect, close #64 ([2819841](https://github.com/post-org/post-config/commit/2819841)), closes [#64](https://github.com/post-org/post-config/issues/64)
+* perf(white-list): add htmlnano, close #63 ([fc262e8](https://github.com/post-org/post-config/commit/fc262e8)), closes [#63](https://github.com/post-org/post-config/issues/63)
+
+
+
 <a name="0.0.4-alpha.3"></a>
 ## 0.0.4-alpha.3 (2017-01-13)
 

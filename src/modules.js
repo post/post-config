@@ -8,7 +8,8 @@ export default new class {
 	constructor() {
 		this.cwd = process.cwd();
 		this.pkg = require(path.join(this.cwd, 'package.json'));
-		this.list = [...new Set([...readdirSync(path.join(this.cwd, 'node_modules')), ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
+		this.nodeModules = existsSync(path.join(this.cwd, 'node_modules')) ? readdirSync(path.join(this.cwd, 'node_modules')) : {};
+		this.list = [...new Set([...this.nodeModules, ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
@@ -47,15 +48,15 @@ export default new class {
 				config = require(path.resolve(this.cwd, config));
 			}
 
-			this.namespaces.filter(namespace => Object.prototype.hasOwnProperty.call(config, namespace))
+			this.namespaces.filter(namespace => Reflect.has(config, namespace))
 				.forEach(namespace => {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], config[namespace]);
-					delete config[namespace];
+					Reflect.deleteProperty(config, namespace);
 				});
 
-			if (Object.prototype.hasOwnProperty.call(config, 'plugins')) {
+			if (Reflect.has(config, 'plugins')) {
 				config = deepmerge(config, config.plugins);
-				delete config.plugins;
+				Reflect.deleteProperty(config, 'plugins');
 			}
 
 			Object.keys(config).forEach(property => {
@@ -69,7 +70,7 @@ export default new class {
 					whiteList[namespace].includes(property)
 				) {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], {[property]: config[property] || {}});
-					delete config[property];
+					Reflect.deleteProperty(config, property);
 				}
 
 				if (
@@ -77,7 +78,7 @@ export default new class {
 					this.namespaces.includes(namespace = this.getNamespace(module))
 				) {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], {[property]: config[property] || {}});
-					delete config[property];
+					Reflect.deleteProperty(config, property);
 				}
 			});
 		});
