@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import blackList from './black-list.js';
 import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
