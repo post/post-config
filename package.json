@@ -54,7 +54,7 @@
     "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "*",
+    "ava": "0.18.1",
     "ava-codemods": "^0.3.0",
     "babel-cli": "^6.22.1",
     "babel-eslint": "^7.1.1",
