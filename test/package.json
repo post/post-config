@@ -195,5 +195,10 @@
       "5",
       "4"
     ]
+  },
+  "testConfig": {
+    "plugins": {
+      "plugin-name": {}
+    }
   }
 }

@@ -16,3 +16,22 @@ test('should retrun Error: config extends must not be an Array', t => {
 
 	t.is(error.message, 'config extends must not be an Array');
 });
+
+test('should retrun config if has config and not namespace', t => {
+	const {testConfig} = postConfig();
+
+	t.true(typeof testConfig === 'object');
+});
+
+/* test('should retrun config if has config and not namespace', t => {
+	const {testConfig} = postConfig();
+	const expected = {
+		testConfig: {
+			plugins: {
+				'plugin-name': {}
+			}
+		}
+	};
+
+	t.deepEqual(expected.testConfig, testConfig);
+}); */
