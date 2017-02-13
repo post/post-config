@@ -1,7 +1,7 @@
 {
   "name": "post-config",
   "version": "0.0.4-alpha.5",
-  "description": "A create configuration for posthtml && postcss plugins",
+  "description": "A create configuration for post processors",
   "license": "MIT",
   "repository": "post-org/post-config",
   "homepage": "post-org/post-config#readme",
@@ -39,13 +39,15 @@
   ],
   "keywords": [
     "post",
+    "processors",
     "HTML",
     "CSS",
     "PostHTML",
     "PostCSS",
+    "Reshape",
     "Package",
     "Plugins",
-    "Config",
+    "Configuration",
     "Sequence",
     "Namespace"
   ],
