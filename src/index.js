@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import Reflect from 'core-js/fn/reflect';
 import blackList from './black-list.js';
 import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
