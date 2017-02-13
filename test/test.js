@@ -23,7 +23,7 @@ test('should retrun config if has config and not namespace', t => {
 	t.true(typeof testConfig === 'object');
 });
 
-/* test('should retrun config if has config and not namespace', t => {
+test('should retrun config with plugins only', t => {
 	const {testConfig} = postConfig();
 	const expected = {
 		testConfig: {
@@ -34,4 +34,4 @@ test('should retrun config if has config and not namespace', t => {
 	};
 
 	t.deepEqual(expected.testConfig, testConfig);
-}); */
+});
