@@ -2,6 +2,7 @@ import path from 'path';
 import {readdirSync, existsSync} from 'fs';
 import toCamelCase from 'to-camel-case';
 import whiteList from './white-list.js';
+import packageList from './package-list.js';
 import deepmerge from 'deepmerge';
 
 export default new class {
@@ -9,7 +10,7 @@ export default new class {
 		this.cwd = process.cwd();
 		this.pkg = require(path.join(this.cwd, 'package.json'));
 		this.nodeModules = existsSync(path.join(this.cwd, 'node_modules')) ? readdirSync(path.join(this.cwd, 'node_modules')) : {};
-		this.list = [...new Set([...this.nodeModules, ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
+		this.list = [...new Set([...this.nodeModules, ...Object.keys(this.pkg).filter(name => !packageList.includes(name)), ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
@@ -48,7 +49,8 @@ export default new class {
 				config = require(path.resolve(this.cwd, config));
 			}
 
-			this.namespaces.filter(namespace => Reflect.has(config, namespace))
+			this.namespaces
+				.filter(namespace => Reflect.has(config, namespace))
 				.forEach(namespace => {
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], config[namespace]);
 					Reflect.deleteProperty(config, namespace);
