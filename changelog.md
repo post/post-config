@@ -1,3 +1,12 @@
+<a name="0.0.4-alpha.7"></a>
+## 0.0.4-alpha.7 (2017-02-13)
+
+* 0.0.4-alpha.7 ([a63ef57](https://github.com/post-org/post-config/commit/a63ef57))
+* fix(*): Cannot find module 'regenerator-runtime/runtime', close #77 ([d456338](https://github.com/post-org/post-config/commit/d456338)), closes [#77](https://github.com/post-org/post-config/issues/77)
+* chore(changelog): Update changelog v0.0.4-alpha.6 ([ba1e2e5](https://github.com/post-org/post-config/commit/ba1e2e5))
+
+
+
 <a name="0.0.4-alpha.6"></a>
 ## 0.0.4-alpha.6 (2017-02-13)
 
