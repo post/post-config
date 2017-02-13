@@ -50,7 +50,27 @@ export default (...configExtends) => {
 					config[namespace].plugins[property] = modules.pkg[namespace][property] || {};
 				}
 
-				if (module === undefined && !modules.list.includes(property)) {
+				if (
+					module === undefined &&
+					!modules.list.includes(property) &&
+					(
+						!Reflect.has(whiteList, namespace) ||
+						(Reflect.has(whiteList, namespace) && Reflect.has(whiteList[namespace], 'property'))
+					) &&
+					Reflect.has(modules.pkg[namespace], 'plugins') &&
+					Reflect.has(modules.pkg[namespace].plugins, property)
+				) {
+					config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+				}
+
+				if (
+					module === undefined &&
+					!modules.list.includes(property) &&
+					(
+						!Reflect.has(modules.pkg[namespace], 'plugins') ||
+						(Reflect.has(modules.pkg[namespace], 'plugins') && !Reflect.has(modules.pkg[namespace].plugins, property))
+					)
+				) {
 					config[namespace][property] = typeof modules.pkg[namespace][property] === 'boolean' ? modules.pkg[namespace][property] : modules.pkg[namespace][property] || {};
 				}
 			});

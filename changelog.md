@@ -1,3 +1,26 @@
+<a name="0.0.4-alpha.6"></a>
+## 0.0.4-alpha.6 (2017-02-13)
+
+* 0.0.4-alpha.6 ([e0091c6](https://github.com/post-org/post-config/commit/e0091c6))
+* test(*): add reshape ([3ce11d8](https://github.com/post-org/post-config/commit/3ce11d8))
+* test(*): create test for #73 ([a44d660](https://github.com/post-org/post-config/commit/a44d660))
+* test(*): devided test ([cb5b06c](https://github.com/post-org/post-config/commit/cb5b06c))
+* test(test): add test for #75 ([9edd663](https://github.com/post-org/post-config/commit/9edd663))
+* style(package): fix ava version ([408f73a](https://github.com/post-org/post-config/commit/408f73a))
+* style(package): update description ([e93b84c](https://github.com/post-org/post-config/commit/e93b84c))
+* style(test): remove comment ([51f6abe](https://github.com/post-org/post-config/commit/51f6abe))
+* fix(*): not create config if config exists, close #73 ([fa9a351](https://github.com/post-org/post-config/commit/fa9a351)), closes [#73](https://github.com/post-org/post-config/issues/73)
+* fix(index): incorrect collect config, #75 ([b303b7e](https://github.com/post-org/post-config/commit/b303b7e))
+* perf(black-list): add reshape, close #74 ([f15fece](https://github.com/post-org/post-config/commit/f15fece)), closes [#74](https://github.com/post-org/post-config/issues/74)
+* perf(package): use buildins, close #71 ([068265c](https://github.com/post-org/post-config/commit/068265c)), closes [#71](https://github.com/post-org/post-config/issues/71)
+* chore(changelog): Update changelog v0.0.4-alpha.5 ([97c4f65](https://github.com/post-org/post-config/commit/97c4f65))
+* chore(package): update ava to version 0.18.1 ([623ded4](https://github.com/post-org/post-config/commit/623ded4))
+* chore(package): update babel-preset-babili to version 0.0.11 ([b673b4a](https://github.com/post-org/post-config/commit/b673b4a))
+* chore(package): update coveralls to version 2.11.16 ([66aed87](https://github.com/post-org/post-config/commit/66aed87))
+* chore(package): update eslint-plugin-ava to version 4.2.0 ([2933a4f](https://github.com/post-org/post-config/commit/2933a4f))
+
+
+
 <a name="0.0.4-alpha.5"></a>
 ## 0.0.4-alpha.5 (2017-01-31)
 

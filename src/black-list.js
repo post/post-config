@@ -13,5 +13,7 @@ export default [
 	'babel-cli',
 	'babel-eslint',
 	'babel-register',
-	'ava-codemods'
+	'ava-codemods',
+	'reshape-code-gen',
+	'reshape-parser'
 ];

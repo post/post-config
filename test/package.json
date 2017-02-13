@@ -77,6 +77,7 @@
     "posthtml-standard-config": "0.0.5",
     "posthtml-style-to-file": "^0.1.1",
     "xo": "*",
+    "reshape": "^0.4.1",
     "perfectionist": "^2.3.1",
     "postcss-at-rules-variables": "0.0.26",
     "postcss-calc": "^5.2.1",
@@ -195,5 +196,17 @@
       "5",
       "4"
     ]
+  },
+  "testConfig": {
+    "plugins": {
+      "plugin-name": {}
+    }
+  },
+  "reshape": {
+    "plugins": {
+      "custom-elements": {
+        "defaultTag": "span"
+      }
+    }
   }
 }
