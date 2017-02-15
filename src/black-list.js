@@ -15,5 +15,6 @@ export default [
 	'babel-register',
 	'ava-codemods',
 	'reshape-code-gen',
-	'reshape-parser'
+	'reshape-parser',
+	'reshape-plugin-util'
 ];
