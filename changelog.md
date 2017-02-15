@@ -1,3 +1,13 @@
+<a name="0.0.4-alpha.8"></a>
+## 0.0.4-alpha.8 (2017-02-15)
+
+* 0.0.4-alpha.8 ([355bff6](https://github.com/post-org/post-config/commit/355bff6))
+* perf(black-list): update for reshape list, close #82 ([fa6ea98](https://github.com/post-org/post-config/commit/fa6ea98)), closes [#82](https://github.com/post-org/post-config/issues/82)
+* perf(modules): change name to property, close #79 ([6e63ee6](https://github.com/post-org/post-config/commit/6e63ee6)), closes [#79](https://github.com/post-org/post-config/issues/79)
+* chore(changelog): Update changelog v0.0.4-alpha.7 ([cb64ed8](https://github.com/post-org/post-config/commit/cb64ed8))
+
+
+
 <a name="0.0.4-alpha.7"></a>
 ## 0.0.4-alpha.7 (2017-02-13)
 
