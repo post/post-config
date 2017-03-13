@@ -65,7 +65,7 @@
     "babel-plugin-array-includes": "^2.0.3",
     "babel-preset-babili": "0.0.11",
     "babel-preset-env": "^1.1.8",
-    "babel-register": "^6.16.0",
+    "babel-register": "^6.24.0",
     "clinton": "^0.11.0",
     "conventional-changelog-cli": "^1.2.0",
     "conventional-changelog-lint": "^1.0.0",
