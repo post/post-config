@@ -14,7 +14,7 @@ export default new class {
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
-	find(namespace = '', property) {
+	find(property, namespace = '') {
 		return this.list.find(module => {
 			// Fix, waits resolve issue #30
 			if (property === '0' || property === '1') {
@@ -67,7 +67,7 @@ export default new class {
 
 			Object.keys(config).forEach(property => {
 				let namespace = this.namespaces.includes(this.getNamespace(property)) ? this.getNamespace(property) : undefined;
-				const module = this.find(namespace, property);
+				const module = this.find(property, namespace);
 
 				if (
 					module === undefined &&
