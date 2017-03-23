@@ -52,6 +52,10 @@ export default new class {
 			this.namespaces
 				.filter(namespace => Reflect.has(config, namespace))
 				.forEach(namespace => {
+					if (!Reflect.has(this.pkg, namespace)) {
+						this.pkg[namespace]	= {};
+					}
+
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], config[namespace]);
 					Reflect.deleteProperty(config, namespace);
 				});
