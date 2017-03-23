@@ -16,7 +16,7 @@ export default new class {
 
 	find(namespace = '', property) {
 		return this.list.find(module => {
-			// fix, waits resolve issue #30
+			// Fix, waits resolve issue #30
 			if (property === '0' || property === '1') {
 				return false;
 			}
