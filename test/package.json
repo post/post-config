@@ -201,12 +201,5 @@
     "plugins": {
       "plugin-name": {}
     }
-  },
-  "reshape": {
-    "plugins": {
-      "custom-elements": {
-        "defaultTag": "span"
-      }
-    }
   }
 }
