@@ -28,10 +28,12 @@ export default (...configExtends) => {
 					Reflect.has(config[namespace].plugins, module)
 				) {
 					config[namespace].plugins[module] = deepmerge(config[namespace].plugins[module], (modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}));
+					return;
 				}
 
 				if (module && Reflect.has(config[namespace].plugins, module) === false) {
 					config[namespace].plugins[module] = modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {};
+					return;
 				}
 
 				if (
@@ -41,6 +43,7 @@ export default (...configExtends) => {
 					whiteList[namespace].includes(property)
 				) {
 					config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					return;
 				}
 
 				if (
@@ -49,6 +52,7 @@ export default (...configExtends) => {
 					whiteList[namespace].includes(property) === false
 				) {
 					config[namespace].plugins[property] = modules.pkg[namespace][property] || {};
+					return;
 				}
 
 				if (
@@ -74,6 +78,7 @@ export default (...configExtends) => {
 					}
 
 					config[namespace].plugins = deepmerge(config[namespace].plugins, {[moduleName]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					return;
 				}
 
 				if (
@@ -101,6 +106,7 @@ export default (...configExtends) => {
 
 				if (Array.isArray(config[namespace].plugins) && config[namespace].plugins.includes(property) === false) {
 					config[namespace].plugins.push(property);
+					return;
 				}
 
 				if (
