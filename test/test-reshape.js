@@ -18,7 +18,7 @@ test('should return default config for reshape', t => {
 	const expected = {
 		reshape: {
 			plugins: {
-				'custom-elements': {
+				'reshape-custom-elements': {
 					defaultTag: 'span'
 				}
 			}

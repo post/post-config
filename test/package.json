@@ -197,7 +197,7 @@
       "4"
     ]
   },
-  "testConfig": {
+  "testconfig": {
     "plugins": {
       "plugin-name": {}
     }
