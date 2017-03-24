@@ -14,9 +14,9 @@ export default new class {
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
-	find(namespace = '', property) {
+	find(property, namespace = '') {
 		return this.list.find(module => {
-			// fix, waits resolve issue #30
+			// Fix, waits resolve issue #30
 			if (property === '0' || property === '1') {
 				return false;
 			}
@@ -52,6 +52,10 @@ export default new class {
 			this.namespaces
 				.filter(namespace => Reflect.has(config, namespace))
 				.forEach(namespace => {
+					if (!Reflect.has(this.pkg, namespace)) {
+						this.pkg[namespace]	= {};
+					}
+
 					this.pkg[namespace] = deepmerge(this.pkg[namespace], config[namespace]);
 					Reflect.deleteProperty(config, namespace);
 				});
@@ -63,7 +67,7 @@ export default new class {
 
 			Object.keys(config).forEach(property => {
 				let namespace = this.namespaces.includes(this.getNamespace(property)) ? this.getNamespace(property) : undefined;
-				const module = this.find(namespace, property);
+				const module = this.find(property, namespace);
 
 				if (
 					module === undefined &&

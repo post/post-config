@@ -1,3 +1,39 @@
+<a name="0.0.4-alpha.9"></a>
+## 0.0.4-alpha.9 (2017-03-23)
+
+* 0.0.4-alpha.9 ([324a1ac](https://github.com/post-org/post-config/commit/324a1ac))
+* chore(.conventional-changelog-lintrc): remove prerelease, close #35 ([2c4967e](https://github.com/post-org/post-config/commit/2c4967e)), closes [#35](https://github.com/post-org/post-config/issues/35)
+* chore(changelog): Update changelog v0.0.4-alpha.8 ([b4dc8ee](https://github.com/post-org/post-config/commit/b4dc8ee))
+* chore(package): ava version ([d0d3828](https://github.com/post-org/post-config/commit/d0d3828))
+* chore(package): update ava to version 0.18.2 ([6f45894](https://github.com/post-org/post-config/commit/6f45894))
+* chore(package): update ava-codemods to version 0.3.2 ([4580795](https://github.com/post-org/post-config/commit/4580795))
+* chore(package): update babel-eslint to version 7.2.0 ([e68cc60](https://github.com/post-org/post-config/commit/e68cc60))
+* chore(package): update babel-preset-babili to version 0.0.12 ([0026473](https://github.com/post-org/post-config/commit/0026473))
+* chore(package): update babel-preset-env to version 1.2.2 ([8df02ff](https://github.com/post-org/post-config/commit/8df02ff))
+* chore(package): update babel-register to version 6.24.0 ([f683b0c](https://github.com/post-org/post-config/commit/f683b0c))
+* chore(package): update conventional-changelog-cli to version 1.3.1 ([142b18e](https://github.com/post-org/post-config/commit/142b18e))
+* chore(package): update conventional-changelog-lint to version 1.1.7 ([7150bf4](https://github.com/post-org/post-config/commit/7150bf4))
+* chore(package): update coveralls to version 2.12.0 ([a007c39](https://github.com/post-org/post-config/commit/a007c39))
+* chore(package): update eslint to version 3.18.0 ([de965db](https://github.com/post-org/post-config/commit/de965db))
+* chore(package): update eslint-config-xo to version 0.18.1 ([e1e1e6a](https://github.com/post-org/post-config/commit/e1e1e6a)), closes [#90](https://github.com/post-org/post-config/issues/90)
+* chore(package): update eslint-plugin-babel to version 4.1.1 ([df67538](https://github.com/post-org/post-config/commit/df67538))
+* chore(package): update eslint-plugin-markdown to version 1.0.0-beta.4 ([1c0d4c9](https://github.com/post-org/post-config/commit/1c0d4c9))
+* chore(package): update husky to version 0.13.2 ([de6d856](https://github.com/post-org/post-config/commit/de6d856))
+* chore(package): update np to version 2.13.0 ([bbbd371](https://github.com/post-org/post-config/commit/bbbd371))
+* chore(package): update testen to version 2.1.0 ([e500f02](https://github.com/post-org/post-config/commit/e500f02))
+* perf(*): add namespace for plugins not installed, close #81 ([d9cd357](https://github.com/post-org/post-config/commit/d9cd357)), closes [#81](https://github.com/post-org/post-config/issues/81)
+* perf(*): add slug case for issue #81 ([d099b7b](https://github.com/post-org/post-config/commit/d099b7b))
+* perf(index): stop loop if finde namespace or module, close #33 ([389ad18](https://github.com/post-org/post-config/commit/389ad18)), closes [#33](https://github.com/post-org/post-config/issues/33)
+* test(*): for issue #80 ([045035a](https://github.com/post-org/post-config/commit/045035a))
+* test(*): for issue #81 ([41fab1b](https://github.com/post-org/post-config/commit/41fab1b))
+* fix(.conventional-changelog-lintrc): fix Merge ([84fa787](https://github.com/post-org/post-config/commit/84fa787))
+* fix(.conventional-changelog-lintrc): fix Merge ([f1dbccb](https://github.com/post-org/post-config/commit/f1dbccb))
+* fix(modules): if namespace not has in pkg, close #80 ([b0d9f2f](https://github.com/post-org/post-config/commit/b0d9f2f)), closes [#80](https://github.com/post-org/post-config/issues/80)
+* style(modules): fix comment ([29a2340](https://github.com/post-org/post-config/commit/29a2340))
+* docs(readme): add Greenkeeper badge  ([8b103f5](https://github.com/post-org/post-config/commit/8b103f5))
+
+
+
 <a name="0.0.4-alpha.8"></a>
 ## 0.0.4-alpha.8 (2017-02-15)
 

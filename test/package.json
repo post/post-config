@@ -197,16 +197,9 @@
       "4"
     ]
   },
-  "testConfig": {
+  "testconfig": {
     "plugins": {
       "plugin-name": {}
-    }
-  },
-  "reshape": {
-    "plugins": {
-      "custom-elements": {
-        "defaultTag": "span"
-      }
     }
   }
 }

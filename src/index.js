@@ -1,4 +1,5 @@
 import Reflect from 'core-js/fn/reflect';
+import toSlugCase from 'to-slug-case';
 import blackList from './black-list.js';
 import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
@@ -19,7 +20,7 @@ export default (...configExtends) => {
 			Object.keys(deepmerge(modules.pkg[namespace], modules.pkg[namespace].plugins || {}))
 			.filter(property => property !== 'plugins')
 			.forEach(property => {
-				const module = modules.find(namespace, property);
+				const module = modules.find(property, namespace);
 
 				if (
 					module &&
@@ -27,10 +28,12 @@ export default (...configExtends) => {
 					Reflect.has(config[namespace].plugins, module)
 				) {
 					config[namespace].plugins[module] = deepmerge(config[namespace].plugins[module], (modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}));
+					return;
 				}
 
 				if (module && Reflect.has(config[namespace].plugins, module) === false) {
 					config[namespace].plugins[module] = modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {};
+					return;
 				}
 
 				if (
@@ -40,6 +43,7 @@ export default (...configExtends) => {
 					whiteList[namespace].includes(property)
 				) {
 					config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					return;
 				}
 
 				if (
@@ -48,6 +52,7 @@ export default (...configExtends) => {
 					whiteList[namespace].includes(property) === false
 				) {
 					config[namespace].plugins[property] = modules.pkg[namespace][property] || {};
+					return;
 				}
 
 				if (
@@ -60,7 +65,20 @@ export default (...configExtends) => {
 					Reflect.has(modules.pkg[namespace], 'plugins') &&
 					Reflect.has(modules.pkg[namespace].plugins, property)
 				) {
-					config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					let moduleName = property;
+
+					if (
+						Reflect.has(modules.pkg, namespace) &&
+						Reflect.has(modules.pkg[namespace], 'plugins') &&
+						Reflect.has(modules.pkg[namespace].plugins, property) &&
+						!property.includes(namespace) &&
+						modules.find(property, namespace) === undefined
+					) {
+						moduleName = toSlugCase(`${namespace} ${property}`);
+					}
+
+					config[namespace].plugins = deepmerge(config[namespace].plugins, {[moduleName]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
+					return;
 				}
 
 				if (
@@ -88,6 +106,7 @@ export default (...configExtends) => {
 
 				if (Array.isArray(config[namespace].plugins) && config[namespace].plugins.includes(property) === false) {
 					config[namespace].plugins.push(property);
+					return;
 				}
 
 				if (
