@@ -6,6 +6,7 @@ export default [
 	'posthtml-attrs-parser',
 	'posthtml-parser',
 	'posthtml-render',
+	'posthtml-match-helper',
 	'postcss-cli',
 	'postcss-value-parser',
 	'babel-register',
