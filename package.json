@@ -1,6 +1,6 @@
 {
   "name": "post-config",
-  "version": "0.0.4-alpha.9",
+  "version": "0.0.4-alpha.10",
   "description": "A create configuration for post processors",
   "license": "MIT",
   "repository": "post-org/post-config",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "commitmsg": "conventional-changelog-lint -e",
-    "prepublish": "conventional-changelog -i changelog.md -s -r 0 && git commit -am \"chore(changelog): Update changelog\"",
+    "prepublish": "npm run build",
     "rc": "np prerelease --tag rc --any-branch",
     "beta": "np prerelease --tag beta --any-branch",
     "alpha": "np prerelease --tag alpha --any-branch",
@@ -26,7 +26,6 @@
     "major": "np major --any-branch",
     "clean": "rm -rf lib",
     "build": "npm run clean && babel src -d lib",
-    "prepublish": "npm run build",
     "lintjs": "eslint ./src/*.js ./test/*.js",
     "lintmd": "eslint --ext md --rule indent: [error, 4] .",
     "pretest": "clinton && npm run lintjs && npm run lintmd",
