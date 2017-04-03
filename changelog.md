@@ -1,3 +1,22 @@
+<a name="0.0.4-alpha.10"></a>
+## 0.0.4-alpha.10 (2017-04-03)
+
+* chore(.conventional-changelog-lintrc): not need ([985baee](https://github.com/post-org/post-config/commit/985baee))
+* chore(changelog): Update changelog v`npm view post-config version` ([7d22806](https://github.com/post-org/post-config/commit/7d22806))
+* chore(package): change prepublish to version ([488e576](https://github.com/post-org/post-config/commit/488e576))
+* chore(package): change prepublish to version ([decf608](https://github.com/post-org/post-config/commit/decf608))
+* chore(package): update babel-preset-env to version 1.3.2 ([327b38a](https://github.com/post-org/post-config/commit/327b38a))
+* chore(package): update clean ([3a827f5](https://github.com/post-org/post-config/commit/3a827f5))
+* chore(package): update conventional-changelog-lint to version 1.1.8 ([962a410](https://github.com/post-org/post-config/commit/962a410))
+* chore(package): update coveralls to version 2.13.0 ([3423720](https://github.com/post-org/post-config/commit/3423720))
+* chore(package): update eslint to version 3.19.0 ([a00b0a7](https://github.com/post-org/post-config/commit/a00b0a7))
+* chore(package): update husky to version 0.13.3 ([96254ea](https://github.com/post-org/post-config/commit/96254ea))
+* chore(package): update updtr to version 1.0.0 ([bd1fdcf](https://github.com/post-org/post-config/commit/bd1fdcf))
+* chore(yarn.lock): add yarn ([cfb96f7](https://github.com/post-org/post-config/commit/cfb96f7))
+* perf(black-list): add posthtml-match-helper, close #103 ([7e545fa](https://github.com/post-org/post-config/commit/7e545fa)), closes [#103](https://github.com/post-org/post-config/issues/103)
+
+
+
 <a name="0.0.4-alpha.9"></a>
 ## 0.0.4-alpha.9 (2017-03-23)
 
