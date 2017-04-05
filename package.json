@@ -59,7 +59,7 @@
   "devDependencies": {
     "ava-codemods": "^0.3.2",
     "ava": "*",
-    "babel-cli": "^6.22.1",
+    "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.0",
     "babel-plugin-add-module-exports": "^0.2.0",
     "babel-plugin-array-includes": "^2.0.3",
