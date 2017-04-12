@@ -60,7 +60,7 @@
     "ava-codemods": "^0.3.2",
     "ava": "*",
     "babel-cli": "^6.22.1",
-    "babel-eslint": "^7.2.0",
+    "babel-eslint": "^7.2.2",
     "babel-plugin-add-module-exports": "^0.2.0",
     "babel-plugin-array-includes": "^2.0.3",
     "babel-preset-babili": "0.0.12",
