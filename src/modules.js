@@ -10,7 +10,7 @@ export default new class {
 		this.cwd = process.cwd();
 		this.pkg = require(path.join(this.cwd, 'package.json'));
 		this.nodeModules = existsSync(path.join(this.cwd, 'node_modules')) ? readdirSync(path.join(this.cwd, 'node_modules')) : {};
-		this.list = [...new Set([...this.nodeModules, ...Object.keys(this.pkg).filter(property => !packageList.includes(property)), ...Object.keys(Object.assign(this.pkg.dependencies, this.pkg.devDependencies))])];
+		this.list = [...new Set([...this.nodeModules, ...Object.keys(this.pkg).filter(property => !packageList.includes(property)), ...Object.keys(Object.assign(this.pkg.dependencies || {}, this.pkg.devDependencies || {}))])];
 		this.namespaces = [...new Set(this.list.map(this.getNamespace).filter(namespace => namespace.length))];
 	}
 
