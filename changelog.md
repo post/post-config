@@ -1,10 +1,31 @@
+<a name="0.0.4-alpha.11"></a>
+## 0.0.4-alpha.11 (2017-04-19)
+
+* 0.0.4-alpha.11 ([55b476e](https://github.com/post-org/post-config/commit/55b476e))
+* chore: add post publish script, close #108 ([83479f9](https://github.com/post-org/post-config/commit/83479f9)), closes [#108](https://github.com/post-org/post-config/issues/108)
+* chore: change clena to rimraf ([7917f33](https://github.com/post-org/post-config/commit/7917f33))
+* chore: update ([8eb58ba](https://github.com/post-org/post-config/commit/8eb58ba))
+* chore(package): update babel-cli to version 6.24.1 ([1377343](https://github.com/post-org/post-config/commit/1377343))
+* chore(package): update babel-eslint to version 7.2.2 ([e1ed53e](https://github.com/post-org/post-config/commit/e1ed53e))
+* chore(package): update babel-register to version 6.24.1 ([dc1cd70](https://github.com/post-org/post-config/commit/dc1cd70))
+* chore(package): update clinton to version 0.12.0 ([7070a9c](https://github.com/post-org/post-config/commit/7070a9c))
+* chore(package): update np to version 2.13.2 ([ef5fe1d](https://github.com/post-org/post-config/commit/ef5fe1d))
+* chore(package): update nyc to version 10.2.0 ([f5771f3](https://github.com/post-org/post-config/commit/f5771f3))
+* fix: cannot convert undefined or null to object, close #116 ([1c34efc](https://github.com/post-org/post-config/commit/1c34efc)), closes [#116](https://github.com/post-org/post-config/issues/116)
+* style: lint ([d1b7dc5](https://github.com/post-org/post-config/commit/d1b7dc5))
+
+
+
 <a name="0.0.4-alpha.10"></a>
 ## 0.0.4-alpha.10 (2017-04-03)
 
+* 0.0.4-alpha.10 ([8dcdf36](https://github.com/post-org/post-config/commit/8dcdf36))
 * chore(.conventional-changelog-lintrc): not need ([985baee](https://github.com/post-org/post-config/commit/985baee))
+* chore(changelog): Update changelog ([476fb01](https://github.com/post-org/post-config/commit/476fb01))
 * chore(changelog): Update changelog v`npm view post-config version` ([7d22806](https://github.com/post-org/post-config/commit/7d22806))
-* chore(package): change prepublish to version ([488e576](https://github.com/post-org/post-config/commit/488e576))
 * chore(package): change prepublish to version ([decf608](https://github.com/post-org/post-config/commit/decf608))
+* chore(package): change prepublish to version ([488e576](https://github.com/post-org/post-config/commit/488e576))
+* chore(package): return prepublish ([bb7b66b](https://github.com/post-org/post-config/commit/bb7b66b))
 * chore(package): update babel-preset-env to version 1.3.2 ([327b38a](https://github.com/post-org/post-config/commit/327b38a))
 * chore(package): update clean ([3a827f5](https://github.com/post-org/post-config/commit/3a827f5))
 * chore(package): update conventional-changelog-lint to version 1.1.8 ([962a410](https://github.com/post-org/post-config/commit/962a410))
