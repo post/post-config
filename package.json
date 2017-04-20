@@ -1,6 +1,6 @@
 {
   "name": "post-config",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.0",
   "description": "A create configuration for post processors",
   "license": "MIT",
   "repository": "post-org/post-config",
