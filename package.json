@@ -86,6 +86,7 @@
     "updtr": "^1.0.0"
   },
   "ava": {
+    "cache": false,
     "require": [
       "babel-register"
     ]
