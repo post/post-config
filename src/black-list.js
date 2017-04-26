@@ -9,7 +9,6 @@ export default [
 	'posthtml-match-helper',
 	'postcss-cli',
 	'postcss-value-parser',
-	'babel-register',
 	'gulp-cli',
 	'babel-cli',
 	'babel-eslint',
