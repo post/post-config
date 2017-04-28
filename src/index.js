@@ -1,13 +1,11 @@
 import Reflect from 'core-js/fn/reflect';
 import toSlugCase from 'to-slug-case';
-import blackList from './black-list.js';
-import whiteList from './white-list.js';
 import deepmerge from 'deepmerge';
 
-export default (...configExtends) => {
-	const modules = require('./modules.js');
+export default (options = {}) => {
+	const modules = require('./modules.js')(options);
 
-	return modules.configExtends(configExtends).namespaces.reduce((config, namespace) => {
+	return modules.namespaces.reduce((config, namespace) => {
 		if (Reflect.has(config, namespace) === false) {
 			config[namespace] = {};
 		}
@@ -40,7 +38,8 @@ export default (...configExtends) => {
 					module === undefined &&
 					modules.namespaces.includes(namespace) &&
 					modules.list.includes(property) &&
-					whiteList[namespace].includes(property)
+					Reflect.has(modules.whitelist, namespace) &&
+					modules.whitelist[namespace].includes(property)
 				) {
 					config[namespace].plugins = deepmerge(config[namespace].plugins, {[property]: modules.pkg[namespace][property] || modules.pkg[namespace].plugins[property] || {}});
 					return;
@@ -49,7 +48,10 @@ export default (...configExtends) => {
 				if (
 					module === undefined &&
 					modules.list.includes(property) &&
-					whiteList[namespace].includes(property) === false
+					!(
+						Reflect.has(modules.whitelist, namespace) &&
+						modules.whitelist[namespace].includes(property)
+					)
 				) {
 					config[namespace].plugins[property] = modules.pkg[namespace][property] || {};
 					return;
@@ -59,8 +61,8 @@ export default (...configExtends) => {
 					module === undefined &&
 					!modules.list.includes(property) &&
 					(
-						!Reflect.has(whiteList, namespace) ||
-						(Reflect.has(whiteList, namespace) && Reflect.has(whiteList[namespace], 'property'))
+						!Reflect.has(modules.whitelist, namespace) ||
+						(Reflect.has(modules.whitelist, namespace) && Reflect.has(modules.whitelist[namespace], 'property'))
 					) &&
 					Reflect.has(modules.pkg[namespace], 'plugins') &&
 					Reflect.has(modules.pkg[namespace].plugins, property)
@@ -96,11 +98,11 @@ export default (...configExtends) => {
 
 		modules.list
 			.filter(property => (property.substr(0, namespace.length) === namespace ||
-					(Reflect.has(whiteList, namespace) && whiteList[namespace].includes(property))) &&
+					(Reflect.has(modules.whitelist, namespace) && modules.whitelist[namespace].includes(property))) &&
 					property !== namespace
 			)
 			.forEach(property => {
-				if (blackList.includes(property)) {
+				if (modules.blacklist.includes(property)) {
 					return;
 				}
 
