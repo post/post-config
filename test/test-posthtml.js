@@ -41,72 +41,74 @@ test('should return default config posthtml from package', t => {
 });
 
 test('should return default config posthtml with extends config', t => {
-	const extend = {
-		posthtml: {
-			sync: false,
-			plugins: {
-				'posthtml-remove-tags': {
-					tags: 'a'
+	const ext = {
+		extends: {
+			config: {
+				posthtml: {
+					sync: false,
+					plugins: {
+						'posthtml-remove-tags': {
+							tags: 'a'
+						},
+						beautify: {
+							rules: {
+								indent: 4
+							}
+						}
+					}
 				},
-				beautify: {
-					rules: {
-						indent: 4
+				postcss: {
+					from: 'src/',
+					plugins: {
+						'postcss-calc': {
+							precision: 2
+						}
+					}
+				},
+				styleToFile: {
+					path: './*.css'
+				},
+				plugins: {
+					atRulesVariables: {
+						atRule: ['@test']
 					}
 				}
-			}
-		},
-		postcss: {
-			from: 'src/',
-			plugins: {
-				'postcss-calc': {
-					precision: 2
-				}
-			}
-		},
-		styleToFile: {
-			path: './*.css'
-		},
-		plugins: {
-			atRulesVariables: {
-				atRule: ['@test']
 			}
 		}
 	};
-	const {posthtml} = postConfig(extend);
+	const {posthtml} = postConfig(ext);
 	const expected = {
-		posthtml: {
-			sync: false,
-			plugins: {
-				'posthtml-bem': {
-					elemPrefix: '__',
-					modPrefix: '--',
-					modDlmtr: '-'
-				},
-				'posthtml-style-to-file': {
-					path: './*.css'
-				},
-				'posthtml-modules': {
-					root: './src/'
-				},
-				'posthtml-inline-assets': {
-					from: 'dev/index.html'
-				},
-				'posthtml-remove-tags': {
-					tags: 'a'
-				},
-				'posthtml-css-modules': {},
-				'posthtml-each': {},
-				'posthtml-include': {},
-				'posthtml-beautify': {
-					rules: {
-						indent: 4
-					}
-				},
-				'posthtml-inline-css': {},
-				'posthtml-remove-attributes': 'class'
-			}
+		sync: false,
+		plugins: {
+			'posthtml-bem': {
+				elemPrefix: '__',
+				modPrefix: '--',
+				modDlmtr: '-'
+			},
+			'posthtml-style-to-file': {
+				path: './*.css'
+			},
+			'posthtml-modules': {
+				root: './src/'
+			},
+			'posthtml-inline-assets': {
+				from: 'dev/index.html'
+			},
+			'posthtml-remove-tags': {
+				tags: 'a'
+			},
+			'posthtml-css-modules': {},
+			'posthtml-each': {},
+			'posthtml-include': {},
+			'posthtml-beautify': {
+				rules: {
+					indent: 4
+				}
+			},
+			'posthtml-inline-css': {},
+			'posthtml-remove-attributes': 'class'
 		}
 	};
 
-	t.deepEqual(expected.posthtml, posthtml);
+	t.deepEqual(expected, posthtml);
 });

@@ -6,24 +6,27 @@ process.chdir(path.resolve(process.cwd() + '/test'));
 
 test('should return default config for reshape', t => {
 	const ext = {
-		reshape: {
-			plugins: {
-				'custom-elements': {
-					defaultTag: 'span'
+		namespace: 'reshape',
+		extends: {
+			config: {
+				reshape: {
+					plugins: {
+						'custom-elements': {
+							defaultTag: 'span'
+						}
+					}
 				}
 			}
 		}
 	};
 	const {reshape} = postConfig(ext);
 	const expected = {
-		reshape: {
-			plugins: {
-				'reshape-custom-elements': {
-					defaultTag: 'span'
-				}
+		plugins: {
+			'reshape-custom-elements': {
+				defaultTag: 'span'
 			}
 		}
 	};
 
-	t.deepEqual(expected.reshape, reshape);
+	t.deepEqual(expected, reshape);
 });

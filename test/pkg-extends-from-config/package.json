@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "poshtml": "*",
+    "eslint": "*"
+  },
+  "posthtml": {
+    "sync": true
+  }
+}
