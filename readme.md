@@ -116,7 +116,7 @@ Description: *Can extend configurations*
   Description: *Inherits, supplements, and extends the resulting configuration object*
 
   - ### `namespace`
-  Type: `Array`  
+  Type: `Array|String`  
   Default: `[]`  
   Description: *Expands the list of namespace for better matching of modules*
 
@@ -131,6 +131,6 @@ Description: *Can extend configurations*
   Description: *Expands the list of module to namespace relationships*
 
   - ### `blacklist`
-  Type: `Object`  
+  Type: `Array`  
   Default: [black-list.js](https://github.com/post-org/post-config/blob/master/src/black-list.js)  
   Description: *Modules necessary to ignore when building the final configuration object*
