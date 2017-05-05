@@ -1,3 +1,4 @@
+import Reflect from 'core-js/fn/reflect';
 import path from 'path';
 import {readdirSync, existsSync, readFileSync} from 'fs';
 import packageList from './package-list.js';
