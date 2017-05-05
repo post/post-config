@@ -1,4 +1,4 @@
-# <img valign="middle" height="49" title="PostHTML logo" src="https://avatars2.githubusercontent.com/u/19793826?v=3&s=200"> post-config
+# post-config
 
 > Creates a configuration
 
