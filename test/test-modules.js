@@ -243,7 +243,7 @@ test('should retrun blacklist extends options `blacklist`', t => {
 	};
 
 	t.true(Array.isArray(modules(options).blacklist));
-	t.true(modules(options).blacklist.includes(options.extends.blacklist[0]));
+	t.true(modules(options).blacklist.indexOf(options.extends.blacklist[0]) !== -1);
 	t.is(modules(options).blacklist.length, require('../src/black-list.js').length + 1);
 });
 
