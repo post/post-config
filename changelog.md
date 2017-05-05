@@ -1,3 +1,44 @@
+<a name="1.0.0-alpha.0"></a>
+# 1.0.0-alpha.0 (2017-05-05)
+
+* 1.0.0-alpha.0 ([2fd258a](https://github.com/post-org/post-config/commit/2fd258a))
+* fix: add reflect polyfill for node 4,5 ([8255fa4](https://github.com/post-org/post-config/commit/8255fa4))
+* fix: downgrade pkg because Proxy is not defined ([27a7e09](https://github.com/post-org/post-config/commit/27a7e09))
+* test: dont not need ignore test node_modules ([6171061](https://github.com/post-org/post-config/commit/6171061))
+* test: fix for node 4,5 ([028cb4a](https://github.com/post-org/post-config/commit/028cb4a))
+* chore: clinton gitignore off ([2c3161a](https://github.com/post-org/post-config/commit/2c3161a))
+* chore: dont not need ignore test node_modules ([4886eb8](https://github.com/post-org/post-config/commit/4886eb8))
+* chore(changelog): Update changelog ([3a8e033](https://github.com/post-org/post-config/commit/3a8e033))
+
+
+
+<a name="1.0.0-alpha.1"></a>
+# 1.0.0-alpha.1 (2017-04-28)
+
+* 1.0.0-alpha.0 ([e833de6](https://github.com/post-org/post-config/commit/e833de6))
+* 1.0.0-alpha.1 ([b361f0c](https://github.com/post-org/post-config/commit/b361f0c))
+* chore: ava cache off ([9c32bb0](https://github.com/post-org/post-config/commit/9c32bb0))
+* chore: no-yarn ([a4a24b4](https://github.com/post-org/post-config/commit/a4a24b4))
+* chore(package): update eslint-plugin-require-path-exists to version 1.1.7 ([1bbe92b](https://github.com/post-org/post-config/commit/1bbe92b))
+* test: update for issue #117, #24 ([69fc241](https://github.com/post-org/post-config/commit/69fc241))
+* refactor: according to new rules modules ([0dc2fa6](https://github.com/post-org/post-config/commit/0dc2fa6))
+* refactor: add feat path and separate property, close #24, close #117 ([fd320c9](https://github.com/post-org/post-config/commit/fd320c9)), closes [#24](https://github.com/post-org/post-config/issues/24) [#117](https://github.com/post-org/post-config/issues/117)
+* refactor: modudes and core ([1817561](https://github.com/post-org/post-config/commit/1817561))
+* docs: add readme, close #21 ([4bd45d0](https://github.com/post-org/post-config/commit/4bd45d0)), closes [#21](https://github.com/post-org/post-config/issues/21)
+* docs: add readme, close #21 ([55de97a](https://github.com/post-org/post-config/commit/55de97a)), closes [#21](https://github.com/post-org/post-config/issues/21)
+* fix: remove double property ([e6511d6](https://github.com/post-org/post-config/commit/e6511d6))
+
+
+
+<a name="0.0.4-alpha.12"></a>
+## 0.0.4-alpha.12 (2017-04-20)
+
+* 0.0.4-alpha.12 ([9fbc774](https://github.com/post-org/post-config/commit/9fbc774))
+* Update readme.md ([64d0e02](https://github.com/post-org/post-config/commit/64d0e02))
+* chore(changelog): Update changelog ([663ba3f](https://github.com/post-org/post-config/commit/663ba3f))
+
+
+
 <a name="0.0.4-alpha.11"></a>
 ## 0.0.4-alpha.11 (2017-04-19)
 

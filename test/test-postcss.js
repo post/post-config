@@ -48,36 +48,40 @@ test('should return default config postcss from package', t => {
 
 test('should return default config postcss with extends config', t => {
 	const extend = {
-		posthtml: {
-			sync: false,
-			plugins: {
-				'posthtml-remove-tags': {
-					tags: 'a'
+		extends: {
+			config: {
+				posthtml: {
+					sync: false,
+					plugins: {
+						'posthtml-remove-tags': {
+							tags: 'a'
+						},
+						beautify: {
+							rules: {
+								indent: 4
+							}
+						}
+					}
 				},
-				beautify: {
-					rules: {
-						indent: 4
+				postcss: {
+					from: 'src/',
+					plugins: {
+						autoprefixer: {
+							browsers: ['last 2 versions']
+						},
+						'postcss-calc': {
+							precision: 2
+						}
+					}
+				},
+				styleToFile: {
+					path: './*.css'
+				},
+				plugins: {
+					atRulesVariables: {
+						atRule: ['@test']
 					}
 				}
-			}
-		},
-		postcss: {
-			from: 'src/',
-			plugins: {
-				autoprefixer: {
-					browsers: ['last 2 versions']
-				},
-				'postcss-calc': {
-					precision: 2
-				}
-			}
-		},
-		styleToFile: {
-			path: './*.css'
-		},
-		plugins: {
-			atRulesVariables: {
-				atRule: ['@test']
 			}
 		}
 	};
@@ -127,7 +131,7 @@ test('should return default config postcss with extends config', t => {
 });
 
 test('should return default config postcss with extends config from file', t => {
-	const {postcss} = postConfig('fixtures/postcss-config-extends.json');
+	const {postcss} = postConfig({extends: {config: require(path.resolve('postcss-extends-config/extends.json'))}});
 	const expected = {
 		postcss: {
 			from: 'src/',
