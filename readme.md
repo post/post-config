@@ -1,7 +1,5 @@
 # post-config
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/post-org/post-config.svg)](https://greenkeeper.io/)
-
 > Creates a configuration
 
 [![Travis Build Status](https://img.shields.io/travis/post-org/post-config/master.svg?style=flat-square&label=unix)](https://travis-ci.org/GitScrum/post-config)[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/GitScrum/post-config/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/GitScrum/post-config)[![node](https://img.shields.io/node/v/post-sequence.svg?maxAge=2592000&style=flat-square)]()[![npm version](https://img.shields.io/npm/v/post-config.svg?style=flat-square)](https://www.npmjs.com/package/post-config)[![Dependency Status](https://david-dm.org/post-org/post-config.svg?style=flat-square)](https://david-dm.org/post-org/post-config)[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)[![Coveralls status](https://img.shields.io/coveralls/post-org/post-config.svg?style=flat-square)](https://coveralls.io/r/GitScrum/post-config)
