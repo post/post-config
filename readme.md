@@ -111,26 +111,26 @@ Default: `{}`
 Description: *Can extend configurations*
 
   - ### `config`
-  Type: `Object`  
-  Default: `{}`  
-  Description: *Inherits, supplements, and extends the resulting configuration object*
+    Type: `Object`  
+    Default: `{}`  
+    Description: *Inherits, supplements, and extends the resulting configuration object*
 
   - ### `namespace`
-  Type: `Array|String`  
-  Default: `[]`  
-  Description: *Expands the list of namespace for better matching of modules*
+    Type: `Array|String`  
+    Default: `[]`  
+    Description: *Expands the list of namespace for better matching of modules*
 
   - ### `modules`
-  Type: `Array`  
-  Default: `[]`  
-  Description: *Inherits, supplements, and extends the resulting configuration object*
+    Type: `Array`  
+    Default: `[]`  
+    Description: *Inherits, supplements, and extends the resulting configuration object*
 
   - ### `whitelist`
-  Type: `Object`  
-  Default: [white-list.js](https://github.com/post-org/post-config/blob/master/src/white-list.js)  
-  Description: *Expands the list of module to namespace relationships*
+    Type: `Object`  
+    Default: [white-list.js](https://github.com/post-org/post-config/blob/master/src/white-list.js)  
+    Description: *Expands the list of module to namespace relationships*
 
   - ### `blacklist`
-  Type: `Array`  
-  Default: [black-list.js](https://github.com/post-org/post-config/blob/master/src/black-list.js)  
-  Description: *Modules necessary to ignore when building the final configuration object*
+    Type: `Array`  
+    Default: [black-list.js](https://github.com/post-org/post-config/blob/master/src/black-list.js)  
+    Description: *Modules necessary to ignore when building the final configuration object*
