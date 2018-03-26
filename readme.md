@@ -2,7 +2,7 @@
 
 > Creates a configuration
 
-[![Travis Build Status](https://img.shields.io/travis/post-org/post-config/master.svg?style=flat-square&label=unix)](https://travis-ci.org/GitScrum/post-config)[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/GitScrum/post-config/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/GitScrum/post-config)[![node](https://img.shields.io/node/v/post-sequence.svg?maxAge=2592000&style=flat-square)]()[![npm version](https://img.shields.io/npm/v/post-config.svg?style=flat-square)](https://www.npmjs.com/package/post-config)[![Dependency Status](https://david-dm.org/post-org/post-config.svg?style=flat-square)](https://david-dm.org/post-org/post-config)[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)[![Coveralls status](https://img.shields.io/coveralls/post-org/post-config.svg?style=flat-square)](https://coveralls.io/r/GitScrum/post-config)
+[![Travis Build Status](https://img.shields.io/travis/post/post-config/master.svg?style=flat-square&label=unix)](https://travis-ci.org/Scrum/post-config)[![node](https://img.shields.io/node/v/post-sequence.svg?maxAge=2592000&style=flat-square)]()[![npm version](https://img.shields.io/npm/v/post-config.svg?style=flat-square)](https://www.npmjs.com/package/post-config)[![Dependency Status](https://david-dm.org/post/post-config.svg?style=flat-square)](https://david-dm.org/post/post-config)[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)[![Coveralls status](https://img.shields.io/coveralls/post/post-config.svg?style=flat-square)](https://coveralls.io/r/Scrum/post-config)
 
 [![npm downloads](https://img.shields.io/npm/dm/post-config.svg?style=flat-square)](https://www.npmjs.com/package/post-config)[![npm](https://img.shields.io/npm/dt/post-config.svg?style=flat-square)](https://www.npmjs.com/package/post-config)
 
@@ -127,10 +127,10 @@ Description: *Can extend configurations*
 
   - ### `whitelist`
     Type: `Object`  
-    Default: [white-list.js](https://github.com/post-org/post-config/blob/master/src/white-list.js)  
+    Default: [white-list.js](https://github.com/post/post-config/blob/master/src/white-list.js)  
     Description: *Expands the list of module to namespace relationships*
 
   - ### `blacklist`
     Type: `Array`  
-    Default: [black-list.js](https://github.com/post-org/post-config/blob/master/src/black-list.js)  
+    Default: [black-list.js](https://github.com/post/post-config/blob/master/src/black-list.js)  
     Description: *Modules necessary to ignore when building the final configuration object*
