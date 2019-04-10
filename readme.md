@@ -46,7 +46,7 @@ const options = postConfig({namespace: ['posthtml']});
     plugins: [
       'posthtml-spaceless',
       ['posthtml-custom-elements', {
-        defaultTag: 'article'
+        defaultTag: 'span'
       }]
     ]
   }
